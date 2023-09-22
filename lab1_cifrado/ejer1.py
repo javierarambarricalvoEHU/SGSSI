@@ -59,9 +59,9 @@ def obtenerMaxs():
             max2 = i
     """
 
-    reemplazar(max,max2, lista)
+    reemplazar(lista)
 
-def reemplazar(max,max2,lista):
+def reemplazar(lista):
     mensaje1 = mensaje.replace(lista[0][0],"e") #OK
     mensaje1 = mensaje1.replace(lista[1][0],"a") #OK
     
