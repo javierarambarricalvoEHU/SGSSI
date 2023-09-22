@@ -37,6 +37,10 @@ def obtenerFrecuencias():
     """
 
 def obtenerMaxs():
+    lista = list(frecuencias.items())
+    lista.sort(key=lambda frec: frec[1], reverse=True)
+    
+    """
     max = 'A'
     max2 = 'B'
     aux = ''
@@ -53,12 +57,40 @@ def obtenerMaxs():
             max2 = aux
         elif frecuencias[i]>frecuencias[max2]:
             max2 = i
+    """
+
+    reemplazar(max,max2, lista)
+
+def reemplazar(max,max2,lista):
+    mensaje1 = mensaje.replace(lista[0][0],"e") #OK
+    mensaje1 = mensaje1.replace(lista[1][0],"a") #OK
     
-    """
-    print(" ")
-    print(max)
-    print(max2)
-    """
+    mensaje1 = mensaje1.replace("T","l") #OK
+    mensaje1 = mensaje1.replace("N","s") #OK
+    mensaje1 = mensaje1.replace("A","d") #OK
+    mensaje1 = mensaje1.replace("R","c") 
+    mensaje1 = mensaje1.replace("J","n") #OK
+    mensaje1 = mensaje1.replace("K","r") #OK 
+    mensaje1 = mensaje1.replace("C","i") #OK 
+    mensaje1 = mensaje1.replace("D","p") #OK 
+    mensaje1 = mensaje1.replace("Z","u") #OK
+    mensaje1 = mensaje1.replace("H","t") #OK
+    mensaje1 = mensaje1.replace("U","g") #OK   
+    mensaje1 = mensaje1.replace("I","o") #OK 
+    mensaje1 = mensaje1.replace("O","f") #OK 
+    mensaje1 = mensaje1.replace("S","q") #OK 
+    mensaje1 = mensaje1.replace("P","m") #OK 
+    mensaje1 = mensaje1.replace("Q","b") #OK 
+    mensaje1 = mensaje1.replace("P","m") #OK 
+    mensaje1 = mensaje1.replace("M","h") #OK 
+    mensaje1 = mensaje1.replace("G","j") #OK 
+    mensaje1 = mensaje1.replace("F","x") #OK 
+    mensaje1 = mensaje1.replace("V","y") #OK 
+    mensaje1 = mensaje1.replace("L","z") #OK 
+
+    print(mensaje1)
+
+
 
 obtenerFrecuencias()
 obtenerMaxs()
