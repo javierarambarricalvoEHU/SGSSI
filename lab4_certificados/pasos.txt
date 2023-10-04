@@ -1,0 +1,58 @@
+ssh javierarambarricalvo.ehu@34.34.191.120
+
+sudo apt update
+
+sudo apt-get install apache2
+
+sudo nano /var/www/html/index.html
+sudo cp /var/www/html/index.html /var/www/html/indexApache.html
+sudo rm /var/www/html/index.html
+sudo nano /var/www/html/index.html
+sudo a2enmod ssl
+sudo systemctl restart apache2
+
+sudo apt install openssl
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
+Generating a RSA private key
+.......+++++
+...........................................................+++++
+writing new private key to '/etc/ssl/private/apache-selfsigned.key'
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:ES
+State or Province Name (full name) [Some-State]:Bizkaia
+Locality Name (eg, city) []:Portugalete
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:EHU
+Organizational Unit Name (eg, section) []:Student
+Common Name (e.g. server FQDN or YOUR name) []:Javier
+Email Address []:javierarambarricalvo.ehu@gmail.com
+
+
+sudo cp /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.bak
+sudo nano /etc/apache2/sites-available/default-ssl.conf
+sudo nano /etc/apache2/sites-available/000-default.conf 
+
+sudo a2enmod headers
+Enabling module headers.
+To activate the new configuration, you need to run:
+  systemctl restart apache2
+
+sudo a2ensite default-ssl
+Enabling site default-ssl.
+To activate the new configuration, you need to run:
+  systemctl reload apache2
+sudo apache2ctl configtest
+Syntax OK
+
+sudo systemctl restart apache2
+
+exit
+logout
+Connection to 34.34.191.120 closed.
+
