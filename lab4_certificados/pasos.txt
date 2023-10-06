@@ -1,16 +1,13 @@
 ssh javierarambarricalvo.ehu@34.34.191.120
-
 sudo apt update
-
 sudo apt-get install apache2
-
 sudo nano /var/www/html/index.html
 sudo cp /var/www/html/index.html /var/www/html/indexApache.html
 sudo rm /var/www/html/index.html
 sudo nano /var/www/html/index.html
+	<h1>Conexión SSL</h1>
 sudo a2enmod ssl
 sudo systemctl restart apache2
-
 sudo apt install openssl
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
 Generating a RSA private key
@@ -33,23 +30,31 @@ Organizational Unit Name (eg, section) []:Student
 Common Name (e.g. server FQDN or YOUR name) []:Javier
 Email Address []:javierarambarricalvo.ehu@gmail.com
 
-
+#Redireccionar del puerto 80 al 443
 sudo cp /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.bak
+
 sudo nano /etc/apache2/sites-available/default-ssl.conf
+	<VirtualHost_default_:443>
+		ServerAdmin jarambarri013@ikasle.ehu.eus
+		ServerName 34.34.191.120
+		SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
+		SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
+		
+		DocumentRoot /var/www/html
+		
 sudo nano /etc/apache2/sites-available/000-default.conf 
+	Redirect permanent "/" "https://34.34.191.120/"
 
 sudo a2enmod headers
-Enabling module headers.
-To activate the new configuration, you need to run:
-  systemctl restart apache2
-
+	Enabling module headers.
+	To activate the new configuration, you need to run:
+  	systemctl restart apache2
 sudo a2ensite default-ssl
-Enabling site default-ssl.
-To activate the new configuration, you need to run:
-  systemctl reload apache2
+	Enabling site default-ssl.
+	To activate the new configuration, you need to run:
+  		systemctl reload apache2
 sudo apache2ctl configtest
-Syntax OK
-
+	Syntax OK
 sudo systemctl restart apache2
 
 exit
