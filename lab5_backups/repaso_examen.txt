@@ -1,0 +1,126 @@
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ ./backupCron.sh 
+mkdir: cannot create directory ‘2023-11-15’: File exists
+sending incremental file list
+--link-dest arg does not exist: /var/tmp/Backups/2023-11-14
+Seguridad/
+Seguridad/a
+Seguridad/b
+Seguridad/c
+Seguridad/d
+Seguridad/e
+
+sent 403 bytes  received 115 bytes  1,036.00 bytes/sec
+total size is 14  speedup is 0.03
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ ls
+2023-11-15  a  b  backupCron.sh  c  d  e  fecha  Seguridad  SeguridadLinkDest
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ cd 2023-11-15/
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups/2023-11-15$ ls
+Seguridad
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups/2023-11-15$ ls -lias
+total 12
+6684989 4 drwxrwxr-x 3 javierac javierac 4096 Nov 15 16:39 .
+6689267 4 drwxrwxr-x 5 javierac javierac 4096 Nov 15 16:38 ..
+6684998 4 drwxrwxr-x 2 javierac javierac 4096 Oct 28 16:57 Seguridad
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups/2023-11-15$ ls -lias ..
+total 48
+6689267 4 drwxrwxr-x  5 javierac javierac 4096 Nov 15 16:38 .
+6555243 4 drwxrwxrwt 14 root     root     4096 Nov 15 16:39 ..
+6684989 4 drwxrwxr-x  3 javierac javierac 4096 Nov 15 16:39 2023-11-15
+6690060 4 -rw-rw-r--  1 javierac javierac    2 Oct 25 15:14 a
+6690063 4 -rw-rw-r--  1 javierac javierac    2 Oct 25 15:14 b
+6689894 4 -rwxrwxr-x  1 javierac javierac  222 Oct 28 17:31 backupCron.sh
+6690064 4 -rw-rw-r--  1 javierac javierac    2 Oct 25 15:14 c
+6690065 4 -rw-rw-r--  1 javierac javierac    2 Oct 25 15:15 d
+6690066 4 -rw-rw-r--  1 javierac javierac    2 Oct 25 15:15 e
+6689694 4 -rw-rw-r--  1 javierac javierac   11 Oct 25 21:35 fecha
+6689581 4 drwxrwxr-x  2 javierac javierac 4096 Oct 28 16:57 Seguridad
+6690068 4 drwxrwxr-x  2 javierac javierac 4096 Oct 25 15:59 SeguridadLinkDest
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups/2023-11-15$ ls -lias Seguridad/
+total 28
+6684998 4 drwxrwxr-x 2 javierac javierac 4096 Oct 28 16:57 .
+6684989 4 drwxrwxr-x 3 javierac javierac 4096 Nov 15 16:39 ..
+6685028 4 -rw-rw-r-- 1 javierac javierac    2 Oct 25 15:14 a
+6685050 4 -rw-rw-r-- 1 javierac javierac    6 Oct 28 16:57 b
+6685075 4 -rw-rw-r-- 1 javierac javierac    2 Oct 25 15:14 c
+6685076 4 -rw-rw-r-- 1 javierac javierac    2 Oct 25 15:15 d
+6685077 4 -rw-rw-r-- 1 javierac javierac    2 Oct 25 15:15 e
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups/2023-11-15$ ls -lias Seguridad/
+total 28
+6684998 4 drwxrwxr-x 2 javierac javierac 4096 Oct 28 16:57 .
+6684989 4 drwxrwxr-x 3 javierac javierac 4096 Nov 15 16:39 ..
+6685028 4 -rw-rw-r-- 1 javierac javierac    2 Oct 25 15:14 a
+6685050 4 -rw-rw-r-- 1 javierac javierac    6 Oct 28 16:57 b
+6685075 4 -rw-rw-r-- 1 javierac javierac    2 Oct 25 15:14 c
+6685076 4 -rw-rw-r-- 1 javierac javierac    2 Oct 25 15:15 d
+6685077 4 -rw-rw-r-- 1 javierac javierac    2 Oct 25 15:15 e
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups/2023-11-15$ mkdir 2023-11-16
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups/2023-11-15$ rsync -av --link-dest=/var/tmp/Backups/2023-11-15 /var/tmp/Backups/Seguridad /var/tmp/Backups/2023-11-16
+sending incremental file list
+created directory /var/tmp/Backups/2023-11-16
+
+sent 167 bytes  received 67 bytes  468.00 bytes/sec
+total size is 14  speedup is 0.06
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups/2023-11-15$ cd ..
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ ls -lias 2023-11-16
+total 12
+6685081 4 drwxrwxr-x 3 javierac javierac 4096 Nov 15 16:44 .
+6689267 4 drwxrwxr-x 6 javierac javierac 4096 Nov 15 16:44 ..
+6685082 4 drwxrwxr-x 2 javierac javierac 4096 Oct 28 16:57 Seguridad
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ ls -lias 2023-11-16/Seguridad/
+total 28
+6685082 4 drwxrwxr-x 2 javierac javierac 4096 Oct 28 16:57 .
+6685081 4 drwxrwxr-x 3 javierac javierac 4096 Nov 15 16:44 ..
+6685028 4 -rw-rw-r-- 2 javierac javierac    2 Oct 25 15:14 a
+6685050 4 -rw-rw-r-- 2 javierac javierac    6 Oct 28 16:57 b
+6685075 4 -rw-rw-r-- 2 javierac javierac    2 Oct 25 15:14 c
+6685076 4 -rw-rw-r-- 2 javierac javierac    2 Oct 25 15:15 d
+6685077 4 -rw-rw-r-- 2 javierac javierac    2 Oct 25 15:15 e
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ mkdir 2023-11-17
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ rsync -av --link-dest=/var/tmp/Backups/2023-11-16 /var/tmp/Backups/Seguridad /var/tmp/Backups/2023-11-17
+sending incremental file list
+Seguridad/b
+
+sent 221 bytes  received 37 bytes  516.00 bytes/sec
+total size is 14  speedup is 0.05
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ ls -lias 2023-11-17/Seguridad/
+total 28
+6685085 4 drwxrwxr-x 2 javierac javierac 4096 Oct 28 16:57 .
+6685084 4 drwxrwxr-x 3 javierac javierac 4096 Nov 15 16:46 ..
+6685028 4 -rw-rw-r-- 3 javierac javierac    2 Oct 25 15:14 a
+6685087 4 -rw-rw-r-- 1 javierac javierac    6 Oct 28 16:57 b
+6685075 4 -rw-rw-r-- 3 javierac javierac    2 Oct 25 15:14 c
+6685076 4 -rw-rw-r-- 3 javierac javierac    2 Oct 25 15:15 d
+6685077 4 -rw-rw-r-- 3 javierac javierac    2 Oct 25 15:15 e
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ mkdir restore
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ rsync -av --link-dest=/var/tmp/Backups/2023-11-16 /var/tmp/Backups/2023-11-17 /var/tmp/Backups/restore
+sending incremental file list
+2023-11-17/
+2023-11-17/Seguridad/
+2023-11-17/Seguridad/a
+2023-11-17/Seguridad/b
+2023-11-17/Seguridad/c
+2023-11-17/Seguridad/d
+2023-11-17/Seguridad/e
+
+sent 445 bytes  received 123 bytes  1,136.00 bytes/sec
+total size is 14  speedup is 0.02
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ ls -lias restore/
+total 12
+6685088 4 drwxrwxr-x 3 javierac javierac 4096 Nov 15 16:54 .
+6689267 4 drwxrwxr-x 8 javierac javierac 4096 Nov 15 16:49 ..
+6685106 4 drwxrwxr-x 3 javierac javierac 4096 Nov 15 16:46 2023-11-17
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ ls -lias restore/2023-11-17/
+total 12
+6685106 4 drwxrwxr-x 3 javierac javierac 4096 Nov 15 16:46 .
+6685088 4 drwxrwxr-x 3 javierac javierac 4096 Nov 15 16:54 ..
+6685107 4 drwxrwxr-x 2 javierac javierac 4096 Oct 28 16:57 Seguridad
+javierac@javierac-TravelMate-Spin-B118-R:/var/tmp/Backups$ ls -lias restore/2023-11-17/Seguridad/
+total 28
+6685107 4 drwxrwxr-x 2 javierac javierac 4096 Oct 28 16:57 .
+6685106 4 drwxrwxr-x 3 javierac javierac 4096 Nov 15 16:46 ..
+6685108 4 -rw-rw-r-- 1 javierac javierac    2 Oct 25 15:14 a
+6685109 4 -rw-rw-r-- 1 javierac javierac    6 Oct 28 16:57 b
+6685110 4 -rw-rw-r-- 1 javierac javierac    2 Oct 25 15:14 c
+6685111 4 -rw-rw-r-- 1 javierac javierac    2 Oct 25 15:15 d
+6685112 4 -rw-rw-r-- 1 javierac javierac    2 Oct 25 15:15 e
+
