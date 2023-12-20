@@ -1,0 +1,43 @@
+LAB8)
+a) 
+sudo iptables -A INPUT -p tcp -s 0.0.0.0/0 --dport 22 DROP
+sudo iptables -A INPUT -p tcp -s 35.190.223.37 --dport 22 ACCEPT
+
+obtener ip: what is my ip?
+sudo iptables -A INPUT -p tcp -s MY_IP --dport 22 -j ACCEPT
+
+b)
+host ehu.eus
+whois IP | grep CIDR
+
+sudo iptables -A INPUT -p tcp -s 0.0.0.0/0 --dport 21 -j DROP
+sudo iptables -A INPUT -p tcp -s RED_EHU --dport 21 ACCEPT
+
+c)
+sudo iptables -A INPUT -p tcp --dport 80 -j DROP
+sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+
+d)
+host youtube.com
+whois 142.250.200.110 | grep CIDR
+sudo iptables -A OUTPUT -p tcp --dest 142.250.0.0/15 -j DROP
+
+
+LAB9)
+index.html: /var/www/html/index.html
+tor url: /var/lib/tor/my_website/hostname (need root permissions)
+g5y6m3ehoujix7a3yr7aqqewf4fyh44jgwpnrhgqvon364f4upqrg2yd.onion
+
+sudo nano /etc/apache2/sites-available/000-default.conf 
+	Redirect permanent "/" "https://34.34.191.120/"
+
+
+LAB10)
+a)
+sudo nmap URL
+sudo nmap IP
+sudo nmap -sV 
+sudo nmap -O
+sudo nmap --traceroute
+sudo nmap -sS
+sudo nmap -sA 
